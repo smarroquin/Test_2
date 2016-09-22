@@ -8,7 +8,7 @@ using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 using System.Text;
 
-namespace SeleniumTestProject1
+namespace MainPageQA
 {
     [TestClass]
     public class Drivers
@@ -27,25 +27,21 @@ namespace SeleniumTestProject1
             verificationErrors = new StringBuilder();
 
         }
-
-
         [TestMethod]
         public void TestFirefox()
         {
             driverFF.Navigate().GoToUrl("http://juntoz-qa.com/");
             Thread.Sleep(1000);
-            driverFF.Close();
+            
         }
-
-        [TestMethod]
-        public void TestChrome()
+       [TestMethod]
+       public void TestChrome()
         {
             driverGC.Navigate().GoToUrl("http://juntoz-qa.com/");
-            Thread.Sleep(1000);
+           Thread.Sleep(1000);
             driverGC.Close();
         }
-
-        //CABECERA
+         //CABECERA
         [TestMethod]
         public void Head()
         {
@@ -65,9 +61,8 @@ namespace SeleniumTestProject1
             StringAssert.Equals("Mi Carrito", driverFF.FindElement(By.Id("btncartitem")).Text);
             Assert.IsTrue(IsElementPresent(By.Id("btnaccount")));
             StringAssert.Equals("Mi Hola Cuenta", driverFF.FindElement(By.Id("btnaccount")).Text);
-            driverFF.Close();
+            
         }
-
         // Valida Option de Categoria
         [TestMethod]
         public void Categoria() {
@@ -93,10 +88,8 @@ namespace SeleniumTestProject1
             StringAssert.Contains("Hogar, Jardín y Herramientas", driverFF.FindElement(By.XPath("//li[@id='container-categories']/div/ul/li[3]/div/a/span")).Text);
             StringAssert.Contains("Moda", driverFF.FindElement(By.XPath("//li[@id='container-categories']/div/ul/li[4]/div/a/span")).Text);
             StringAssert.Contains("Juguetes, Niños y Bebés", driverFF.FindElement(By.XPath("//li[@id='container-categories']/div/ul/li[5]/div/a/span")).Text);
-            driverFF.Close();
-            
+                        
         }
-
         //Validacion POR Tiendas
         [TestMethod]
         public void PorTienda() {
@@ -152,9 +145,7 @@ namespace SeleniumTestProject1
             driverFF.FindElement(By.PartialLinkText("tiendas")).Click();
             driverFF.Navigate().GoToUrl("http://juntoz-qa.com/tiendas");
             Assert.AreEqual("Búsqueda por tienda", driverFF.FindElement(By.CssSelector("h2.title-search-by-store")).Text);
-            
-
-            driverFF.Close();
+           
         }
         //busqueda por TIENDA
         [TestMethod]
@@ -199,7 +190,7 @@ namespace SeleniumTestProject1
                 }
                 catch (AssertFailedException)
                 { }
-                driverFF.Close();
+               
             }
         }
         // Abrir MI TIENDA
@@ -264,9 +255,7 @@ namespace SeleniumTestProject1
             Assert.AreEqual("Teléfono:", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div[2]/form/div[3]/div[3]/label")).Text);
             Assert.IsTrue(IsElementPresent(By.Name("telephone")));
             driverFF.FindElement(By.CssSelector("li > h1.h1-logo.ng-scope > a.logo")).Click();
-            driverFF.Close();
-
-            }
+                      }
         //Mi Carrito
         [TestMethod]
         public void MiCarrito()
@@ -283,8 +272,7 @@ namespace SeleniumTestProject1
             Assert.AreEqual("Si ya está registrado, ingresa aquí:", driverFF.FindElement(By.CssSelector("div.popover-cart-header__content.ng-scope > p > span.ng-scope")).Text);
             Assert.IsTrue(IsElementPresent(By.LinkText("Mi cuenta")));
             Assert.AreEqual("Mi cuenta", driverFF.FindElement(By.LinkText("Mi cuenta")).Text);
-            driverFF.Close();
-        }
+                   }
         //Mi Cuenta
         [TestMethod]
         public void MiCuenta()
@@ -301,9 +289,7 @@ namespace SeleniumTestProject1
             try { Assert.IsTrue(Regex.IsMatch(driverFF.FindElement(By.CssSelector("p.text-new-customer > span.ng-scope")).Text, "^exact:¿Eres cliente nuevo[\\s\\S]$")); } catch (AssertFailedException) { }
             Assert.IsTrue(IsElementPresent(By.CssSelector("a.text-new-customer.ng-scope")));
             Assert.AreEqual("Empieza aquí.", driverFF.FindElement(By.CssSelector("a.text-new-customer.ng-scope")).Text);
-            driverFF.Close();
-
-        }
+                   }
         //Main Page
         [TestMethod]
         public void MainPage()
@@ -343,7 +329,7 @@ namespace SeleniumTestProject1
             Assert.AreEqual("juntos", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[6]/div/div[3]/p[2]/strong[3]")).Text);
             Assert.AreEqual("Juntoz cuenta con métodos de pagos seguros y rápidos, entre ellos contamos con: Pago con tarjeta de crédito, pago con tarjeta de débito, Pago Efectivo, Safety Pay, pago contra entrega y store pickup (compra online y recoge en tienda). Visita nuestras redes sociales: Facebook, Twitter, Youtube y G+ y encuentra novedades, promociones, descuentos y mucho más.", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[6]/div/div[4]/p")).Text);
             StringAssert.Equals("Fonocompras\n(01) 640-9-640", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[4]/div/div[2]")).Text);
-            driverFF.Close();
+           
         }
         //Bottom
         [TestMethod]
