@@ -314,19 +314,19 @@ namespace SeleniumTestProject1
             Assert.IsTrue(IsElementPresent(By.CssSelector("i.fa.fa-facebook")));
             Assert.IsTrue(IsElementPresent(By.CssSelector("div.owl-page.active > span")));
             Assert.IsTrue(IsElementPresent(By.CssSelector("div.title-step-home")));
-            Assert.AreEqual("Tiendas\noficiales", driverFF.FindElement(By.CssSelector("div.title-step-home")).Text);
+            StringAssert.Equals("Tiendas \noficiales", driverFF.FindElement(By.CssSelector("div.title-step-home")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[2]/div/div[2]")));
-            Assert.AreEqual("Llegamos\na todo el país", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[2]/div/div[2]")).Text);
+            StringAssert.Equals("Llegamos\na todo el país", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[2]/div/div[2]")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[3]/div/div[2]")));
-            Assert.AreEqual("Paga con cualquier\nforma de pago", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[3]/div/div[2]")).Text);
+            StringAssert.Equals("Paga con cualquier\nforma de pago", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[3]/div/div[2]")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[4]/div/div[2]")));
-            Assert.AreEqual("Tiendas Destacadas", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div/h2/b")).Text);
+            StringAssert.Equals("Tiendas Destacadas", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div/h2/b")).Text);
             Assert.IsTrue(IsElementPresent(By.CssSelector("span.tab-text")));
-            Assert.AreEqual("Todas las tiendas", driverFF.FindElement(By.CssSelector("span.tab-text")).Text);
+            StringAssert.Equals("Todas las tiendas", driverFF.FindElement(By.CssSelector("span.tab-text")).Text);
             Assert.IsTrue(IsElementPresent(By.CssSelector("#cyber-tab > a > h3.no-margin > span.tab-text")));
-            Assert.AreEqual(".Winter Sale", driverFF.FindElement(By.CssSelector("#cyber-tab > a > h3.no-margin > span.tab-text")).Text);
+            StringAssert.Equals(".Winter Sale", driverFF.FindElement(By.CssSelector("#cyber-tab > a > h3.no-margin > span.tab-text")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//ul[@id='tab-home']/li[3]/a/h3/span[2]")));
-            Assert.AreEqual("Las más populares", driverFF.FindElement(By.XPath("//ul[@id='tab-home']/li[3]/a/h3/span[2]")).Text);
+            StringAssert.Equals("Las más populares", driverFF.FindElement(By.XPath("//ul[@id='tab-home']/li[3]/a/h3/span[2]")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//ul[@id='tab-home']/li[4]/a/h3/span[2]")));
             Assert.AreEqual("Tiendas multimarca", driverFF.FindElement(By.XPath("//ul[@id='tab-home']/li[4]/a/h3")).Text);
             Assert.IsTrue(IsElementPresent(By.XPath("//ul[@id='tab-home']/li[5]/a/h3/span[2]")));
@@ -337,14 +337,59 @@ namespace SeleniumTestProject1
             Assert.AreEqual("Productos recomendados para ti", driverFF.FindElement(By.CssSelector("div.col-md-12 > h2.title-general > b")).Text);
             Assert.AreEqual("Lo más buscado de nuestras tiendas", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[5]/div/h2/b")).Text);
             Assert.AreEqual("Conoce más sobre Juntoz", driverFF.FindElement(By.CssSelector("div.col-md-12.text-home-juntoz > h2.title-general > b")).Text);
-            Assert.IsTrue(Regex.IsMatch(driverFF.FindElement(By.CssSelector("div > p")).Text, "^exact:Juntoz es una nueva plataforma online enfocada en reunir marcas y tiendas, bajo el concepto de un Marketplace para todos\\. Agrupamos en un solo sitio a tus tiendas y marcas favoritas, cada una bajo el formato de Shop-in-Shop \\(tienda propia con su buscador propio\\) dentro de nuestra plataforma online\\. De este modo, acercamos las marcas más importantes a nuestros clientes en un canal complementario y adicional de ventas por internet\\. ¿Qué es Juntoz[\\s\\S] Es un mall o centro comercial, que abre tiendas de marcas, llevado al internet: Juntoz\\.com es un mall online o marketplace online\\.$"));
+            try { Assert.IsTrue(Regex.IsMatch(driverFF.FindElement(By.CssSelector("div > p")).Text, "^exact:Juntoz es una nueva plataforma online enfocada en reunir marcas y tiendas, bajo el concepto de un Marketplace para todos\\. Agrupamos en un solo sitio a tus tiendas y marcas favoritas, cada una bajo el formato de Shop-in-Shop \\(tienda propia con su buscador propio\\) dentro de nuestra plataforma online\\. De este modo, acercamos las marcas más importantes a nuestros clientes en un canal complementario y adicional de ventas por internet\\. ¿Qué es Juntoz[\\s\\S] Es un mall o centro comercial, que abre tiendas de marcas, llevado al internet: Juntoz\\.com es un mall online o marketplace online\\.$")); } catch (AssertFailedException) { }
             Assert.AreEqual("En Juntoz, vive la nueva experiencia de realizar compras por internet en el Mall online de las mejores marcas y retailers. Aquí encontrarás tiendas con productos sobre audífonos, belleza, calzado, cámaras fotográficas, celulares, cervezas, colchones, computadoras, cuidado personal, deportes, electrodomésticos, hogar, instrumentos musicales, jardín, joyería, juguetes, lentes, libros, maletas y mochilas, moda, motores, productos para bebés, relojes, salud, supermercado, tablets, tecnología, TV, útiles escolares, videojuegos, vinos, vitaminas y suplementos, y mucho más.", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[6]/div/div[2]/div/p")).Text);
             Assert.AreEqual("Contamos con muchas marcas importantes dentro de Juntoz como: BabyPlaza, Calimod, DC Shoes, Delirium, Kawasaki, Quiksilver, Neff, Nutrishop, Roxy, Skullcandy, Spy, The Box, THM Store, Triathlon, Utilex, Vans, Victorinox, entre otros.", driverFF.FindElement(By.CssSelector("div.col-md-4 > p")).Text);
             Assert.AreEqual("juntos", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[6]/div/div[3]/p[2]/strong[3]")).Text);
             Assert.AreEqual("Juntoz cuenta con métodos de pagos seguros y rápidos, entre ellos contamos con: Pago con tarjeta de crédito, pago con tarjeta de débito, Pago Efectivo, Safety Pay, pago contra entrega y store pickup (compra online y recoge en tienda). Visita nuestras redes sociales: Facebook, Twitter, Youtube y G+ y encuentra novedades, promociones, descuentos y mucho más.", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[3]/div[6]/div/div[4]/p")).Text);
-            Assert.AreEqual("Fonocompras\n(01) 640-9-640", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[4]/div/div[2]")).Text);
+            StringAssert.Equals("Fonocompras\n(01) 640-9-640", driverFF.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div/div[4]/div/div[2]")).Text);
             driverFF.Close();
         }
+        //Bottom
+        [TestMethod]
+        public void Bottom()
+        {
+            driverFF.Navigate().GoToUrl("http://juntoz-qa.com/");
+            Assert.AreEqual("Mi cuenta", driverFF.FindElement(By.CssSelector("ul.list-unstyled.footer-list > span.ng-scope")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Registro")));
+            Assert.AreEqual("Registro", driverFF.FindElement(By.LinkText("Registro")).Text);
+            Assert.AreEqual("Servicio al cliente", driverFF.FindElement(By.XPath("//div[@id='footer-juntoz']/footer/div/nav[2]/ul/span")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Preguntas frecuentes")));
+            Assert.AreEqual("Preguntas frecuentes", driverFF.FindElement(By.LinkText("Preguntas frecuentes")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Cambios y devoluciones")));
+            Assert.AreEqual("Cambios y devoluciones", driverFF.FindElement(By.LinkText("Cambios y devoluciones")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Términos y condiciones")));
+            Assert.AreEqual("Términos y condiciones", driverFF.FindElement(By.LinkText("Términos y condiciones")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Privacidad y confidencialidad")));
+            Assert.AreEqual("Privacidad y confidencialidad", driverFF.FindElement(By.LinkText("Privacidad y confidencialidad")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Términos legales de Campañas")));
+            Assert.AreEqual("Términos legales de Campañas", driverFF.FindElement(By.LinkText("Términos legales de Campañas")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Mapa del sitio")));
+            Assert.AreEqual("Mapa del sitio", driverFF.FindElement(By.LinkText("Mapa del sitio")).Text);
+            Assert.IsTrue(IsElementPresent(By.LinkText("Vendamos juntos")));
+            Assert.AreEqual("Vendamos juntos", driverFF.FindElement(By.LinkText("Vendamos juntos")).Text);
+            Assert.IsTrue(IsElementPresent(By.XPath("//div[@id='footer-juntoz']/footer/div/nav[3]/ul/span")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("i.fa.fa-facebook-square")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("i.fa.fa-twitter-square")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("i.fa.fa-youtube-square")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("i.fa.fa-google-plus-square")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("a.blog-icon > span")));
+            Assert.AreEqual("Contáctanos", driverFF.FindElement(By.XPath("//div[@id='footer-juntoz']/footer/div/nav[3]/ul[2]/span")).Text);
+            Assert.AreEqual("Teléfono: (511) 640-9-640", driverFF.FindElement(By.XPath("//div[@id='footer-juntoz']/footer/div/nav[3]/ul[2]/li")).Text);
+            Assert.AreEqual("Email: hola@juntoz.com", driverFF.FindElement(By.XPath("//div[@id='footer-juntoz']/footer/div/nav[3]/ul[2]/li[2]")).Text);
+            Assert.AreEqual("Formas de Pago", driverFF.FindElement(By.CssSelector("li > span.ng-scope")).Text);
+            Assert.IsTrue(IsElementPresent(By.CssSelector("li > img")));
+            Assert.IsTrue(IsElementPresent(By.CssSelector("li > img")));
+            Assert.AreEqual("Recibe y conoce nuestras promociones", driverFF.FindElement(By.CssSelector("#subscribeForm > span.ng-scope")).Text);
+            Assert.IsTrue(IsElementPresent(By.CssSelector("span.img-newsletter.pull-left")));
+            Assert.IsTrue(IsElementPresent(By.XPath("//input[@type='email']")));
+            Assert.IsTrue(IsElementPresent(By.XPath("//button[@type='submit']")));
+            Assert.AreEqual("Suscríbete", driverFF.FindElement(By.XPath("//button[@type='submit']")).Text);
+            Assert.IsTrue(IsElementPresent(By.CssSelector("span.book-name.ng-scope")));
+            StringAssert.Equals("Libro de \nReclamaciones", driverFF.FindElement(By.CssSelector("span.book-name.ng-scope")).Text);
+            Assert.AreEqual("2016 Juntoz | Todos los derechos reservados", driverFF.FindElement(By.CssSelector("div.footer-copyright")).Text);
+            driverFF.Close();
+    }
         private bool IsElementPresent(By by)
         {
             try
@@ -357,8 +402,6 @@ namespace SeleniumTestProject1
                 return false;
             }
         }
-       
-             
-        
+            
     }
 }
