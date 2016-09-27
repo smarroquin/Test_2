@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainPageQA", "SeleniumTestP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchCategory", "SearchCategory\SearchCategory.csproj", "{808EE07B-3302-4431-871E-BEA4D91542F0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiCuenta", "UnitTestProject1\MiCuenta.csproj", "{5BD03611-821C-4951-AA01-328367EE62F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping", "Shopping\Shopping.csproj", "{ED85F04C-86C4-46BA-9933-D8967791D525}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{808EE07B-3302-4431-871E-BEA4D91542F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{808EE07B-3302-4431-871E-BEA4D91542F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{808EE07B-3302-4431-871E-BEA4D91542F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BD03611-821C-4951-AA01-328367EE62F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BD03611-821C-4951-AA01-328367EE62F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BD03611-821C-4951-AA01-328367EE62F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BD03611-821C-4951-AA01-328367EE62F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED85F04C-86C4-46BA-9933-D8967791D525}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED85F04C-86C4-46BA-9933-D8967791D525}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED85F04C-86C4-46BA-9933-D8967791D525}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED85F04C-86C4-46BA-9933-D8967791D525}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
