@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchCategory", "SearchCat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiCuenta", "UnitTestProject1\MiCuenta.csproj", "{5BD03611-821C-4951-AA01-328367EE62F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shopping", "Shopping\Shopping.csproj", "{ED85F04C-86C4-46BA-9933-D8967791D525}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingVisa", "Shopping\ShoppingVisa.csproj", "{ED85F04C-86C4-46BA-9933-D8967791D525}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingMasterCard", "ShoppingMasterCard\ShoppingMasterCard.csproj", "{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ED85F04C-86C4-46BA-9933-D8967791D525}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED85F04C-86C4-46BA-9933-D8967791D525}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED85F04C-86C4-46BA-9933-D8967791D525}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
