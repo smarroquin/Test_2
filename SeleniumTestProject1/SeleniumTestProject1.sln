@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingVisa", "Shopping\Sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingMasterCard", "ShoppingMasterCard\ShoppingMasterCard.csproj", "{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShoppingDiners", "ShoppingDiners\ShoppingDiners.csproj", "{229EC727-34F8-43CA-BC84-056BA8C5FCC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F4E9ECB-E6DF-4897-87BF-4F7F2EFFFD02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{229EC727-34F8-43CA-BC84-056BA8C5FCC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{229EC727-34F8-43CA-BC84-056BA8C5FCC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{229EC727-34F8-43CA-BC84-056BA8C5FCC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{229EC727-34F8-43CA-BC84-056BA8C5FCC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
