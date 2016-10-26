@@ -689,7 +689,7 @@ namespace HomePage
             Assert.AreEqual("QUEJA:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/div/div/form/div[22]/p[2]/b")).Text);
         }
 
-        }
+        
         private bool IsElementPresent(By by)
         {
             try
