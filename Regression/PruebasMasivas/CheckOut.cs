@@ -8,7 +8,7 @@ using OpenQA.Selenium.Support.UI;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 
-namespace PruebasMasivas
+namespace MetodosPago
 {
     [TestClass]
     public class CheckOut

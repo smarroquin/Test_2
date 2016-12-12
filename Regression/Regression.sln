@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobileD", "MobileD\MobileD.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Merchant", "SuperAdmin\Merchant.csproj", "{1CA44451-0F7A-4084-9B52-77BD4A60E829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasMasivas", "PruebasMasivas\PruebasMasivas.csproj", "{C252257E-978E-4AF0-B7BC-CD3A841875CB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetodosPago", "PruebasMasivas\MetodosPago.csproj", "{C252257E-978E-4AF0-B7BC-CD3A841875CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
