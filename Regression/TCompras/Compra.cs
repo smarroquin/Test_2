@@ -136,133 +136,133 @@ namespace TCompras
             driver.FindElement(By.Id("btncartitem")).Click();
         }
 
-        [TestMethod]
-        public void Checkout()
-        {
-            driver.Navigate().GoToUrl("https://juntoz.com/producto/magefesa-juego-de-ollas-antartida-aluminio-antiadherente-12-031817?ref=1&variationThumb=31817");
-            driver.FindElement(By.Id("btnaccount")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.XPath("//div[@id='thumbnail-control-variation']/div/ul/li/a")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.Id("btnaccount")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/button")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.Id("btnaccount")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.Id("btnaccount")).Click();
-            Thread.Sleep(100);
-            driver.FindElement(By.Id("btncartitem")).Click();
-            Thread.Sleep(500);
-            //driver.FindElement(By.XPath("//h5/span[2]/span")).Click();
-            Thread.Sleep(500);
-            // driver.FindElement(By.CssSelector("button.close.exclude")).Click();
-            Thread.Sleep(500);
-            driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div[2]")).Click();
-            driver.FindElement(By.Id("btncartitem")).Click();
-            Thread.Sleep(500);
-            IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
-            jse.ExecuteScript("scroll(250, 0)");
-            //driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/button")).Click();
-            driver.FindElement(By.Id("btncartitem")).Click();
+        //[TestMethod]
+        //public void Checkout()
+        //{
+        //    driver.Navigate().GoToUrl("https://juntoz.com/producto/magefesa-juego-de-ollas-antartida-aluminio-antiadherente-12-031817?ref=1&variationThumb=31817");
+        //    driver.FindElement(By.Id("btnaccount")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.XPath("//div[@id='thumbnail-control-variation']/div/ul/li/a")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.Id("btnaccount")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/button")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.Id("btnaccount")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.Id("btnaccount")).Click();
+        //    Thread.Sleep(100);
+        //    driver.FindElement(By.Id("btncartitem")).Click();
+        //    Thread.Sleep(500);
+        //    //driver.FindElement(By.XPath("//h5/span[2]/span")).Click();
+        //    Thread.Sleep(500);
+        //    // driver.FindElement(By.CssSelector("button.close.exclude")).Click();
+        //    Thread.Sleep(500);
+        //    driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div[2]")).Click();
+        //    driver.FindElement(By.Id("btncartitem")).Click();
+        //    Thread.Sleep(500);
+        //    IJavaScriptExecutor jse = (IJavaScriptExecutor)driver;
+        //    jse.ExecuteScript("scroll(250, 0)");
+        //    //driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div[2]/div/div[2]/div/div[3]/div[2]/div/div/div/button")).Click();
+        //    driver.FindElement(By.Id("btncartitem")).Click();
             
-            driver.FindElement(By.XPath("//div[@id='header-juntoz']/nav/div/div[2]/div/div/div/div/ul/li[2]/div/div[2]/div/div/table/tfoot/tr/td/button")).Click();
-            driver.FindElement(By.Id("btncartitem")).Click();
-            Thread.Sleep(500);
-            driver.FindElement(By.LinkText("Iniciar Sesión")).Click();
-            Thread.Sleep(500);
-            driver.FindElement(By.Name("userEmail")).Clear();
-            driver.FindElement(By.Name("userEmail")).SendKeys("denisse@ieholding.com");
-            driver.FindElement(By.Name("password")).Clear();
-            driver.FindElement(By.Name("password")).SendKeys("43445093");
-            driver.FindElement(By.XPath("//input[@type='checkbox']")).Click();
-            driver.FindElement(By.Id("btnLogin")).Click();
-            Thread.Sleep(1000);
-            jse.ExecuteScript("scroll(50, 0)");
-            driver.FindElement(By.XPath("//div[@id='thumbnail-control-variation']/div/ul/li/a")).Click();
-            driver.FindElement(By.Id("btncartitem")).Click();
-            driver.FindElement(By.XPath("//div[@id='header-juntoz']/nav/div/div[2]/div/div/div/div/ul/li[2]/div/div[2]/div/div/table/tfoot/tr/td/button")).Click();
-            driver.FindElement(By.Id("btncartitem")).Click();
-            Thread.Sleep(500);
-            Assert.AreEqual("Checkout", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/div/div/h1/small")).Text);
-            Assert.AreEqual("Por favor ingresa la información solicitada para completar tu compra.", driver.FindElement(By.CssSelector("small.text-navy")).Text);
-            Assert.AreEqual("1. Información de Contacto", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/h2/small")).Text);
-            Assert.AreEqual("Datos del destinatario", driver.FindElement(By.CssSelector("h4")).Text);
-            StringAssert.Equals("Nombres", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
-            Assert.AreEqual("Marroquin", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[2]/div[2]/div/span[2]")).Text);
-            Assert.AreEqual("Dirección:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[3]/div/label")).Text);
-            Assert.AreEqual("Calles Los Olivos 215", driver.FindElement(By.CssSelector("div.col-md-9.no-padding-left > span.ng-binding")).Text);
-            Assert.AreEqual("Teléfono:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[5]/div/label")).Text);
-            Assert.AreEqual("992781330", driver.FindElement(By.CssSelector("div.text-darkgray.ng-binding")).Text);
-            Assert.AreEqual("Cambiar la dirección de envío", driver.FindElement(By.CssSelector("h4.ng-scope")).Text);
-            Assert.AreEqual("Calles Los Olivos 215", driver.FindElement(By.CssSelector("label > span.ng-binding")).Text);
-            try
-            {
-                Assert.IsTrue(IsElementPresent(By.LinkText("Agregar nueva dirección de envío")));
-            }
-            catch (AssertFailedException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            Assert.AreEqual("Agregar nueva dirección de envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[7]/div[2]/a/small")).Text);
-            Assert.AreEqual("Datos de Facturación", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/h4[3]")).Text);
-            Assert.AreEqual("Tipo:", driver.FindElement(By.CssSelector("div.col-md-4 > label.ng-scope")).Text);
-            StringAssert.Equals("Boleta Factura", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[8]/div/div/select")).Text);
-            Assert.AreEqual("2. Método de Pago", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/h2/small")).Text);
-            Assert.AreEqual("Tarjeta de crédito o débito", driver.FindElement(By.CssSelector("b.ng-binding.ng-scope")).Text);
-            Assert.AreEqual("Banca por internet, Agentes y Agencias", driver.FindElement(By.XPath("//label[@id='lb_pm2']/span/span[2]")).Text);
-            Assert.AreEqual("Pago en bancos", driver.FindElement(By.CssSelector("#lb_pm3 > b.ng-scope")).Text);
-            Assert.AreEqual("Pago contra entrega", driver.FindElement(By.CssSelector("#lb_pm4 > b.ng-binding.ng-scope")).Text);
-            driver.FindElement(By.Name("payMethodOptionRadio")).Click();
-            Assert.AreEqual("Nombre del titular", driver.FindElement(By.CssSelector("div.validation-section > div.row > div.col-md-12 > label")).Text);
-            driver.FindElement(By.CssSelector("#lb_pm2 > input[name=\"payMethodOptionRadio\"]")).Click();
-            Assert.AreEqual("Banca por Internet, Agentes y Agencias INTERBANK, BANBIF, BCP, BBVA y SCOTIABANK. WESTERN UNION (Pago de Servicios), KASNET y FULLCARGA.", driver.FindElement(By.CssSelector("p.text-darkgray.text-justify")).Text);
-            try
-            {
-                Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Cómo funciona PagoEfectivo?")).Text, "^exact:¿Cómo funciona PagoEfectivo[\\s\\S]$"));
-            }
-            catch { };
-                driver.FindElement(By.CssSelector("#lb_pm3 > input[name=\"payMethodOptionRadio\"]")).Click();
-            Assert.AreEqual("Compra rápido, fácil y seguro, y paga en efectivo o vía internet en la red de agencias de nuestros bancos afiliados con SafetyPay", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/div[3]/div/div/div/div/p")).Text);
-            try
-            {
-                Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Qué es SafetyPay?")).Text, "^exact:¿Qué es SafetyPay[\\s\\S]$"));
-            }
-            catch { };
-            driver.FindElement(By.CssSelector("#lb_pm4 > input[name=\"payMethodOptionRadio\"]")).Click();
-            driver.FindElement(By.Id("lb_pm4")).Click();
-            try { Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/div[4]/div/div/div/div/div/p")).Text, "^exact:!Los envíos a centros de trabajo tienen 95% de entregas a tiempo! ¿Por qué no eliges la dirección de tu trabajo para la entrega[\\s\\S] Para este medio de pago, el monto de tu compra no debe exceder S/\\.2000 y el peso de los productos no debe exceder los 20 kg \\(peso volumétrico\\)\\. Si tu compra es de un monto superior, por favor, debes elegir entre los otros medios de pago que tenemos disponibles\\. Este método de pago está disponible sólo para ciudades principales\\.$"));
-                Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Qué es... Pago contra entrega?")).Text, "^exact:¿Qué es\\.\\.\\. Pago contra entrega[\\s\\S]$"));
-            }
-            catch { };
-                Assert.AreEqual("3. Resumen de orden", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/h2/small")).Text);
-            Assert.AreEqual("Producto", driver.FindElement(By.CssSelector("th.text-center.ng-scope")).Text);
-            Assert.AreEqual("Cantidad", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/thead/tr/th[2]")).Text);
-            Assert.AreEqual("Subtotal", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/thead/tr/th[3]")).Text);
-            Assert.AreEqual("Subtotal", driver.FindElement(By.CssSelector("tfoot.chkout-table-footer > tr > td")).Text);
-            Assert.AreEqual("Envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[3]/td[2]")).Text);
-            Assert.AreEqual("Total", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[4]/td[2]")).Text);
-            Assert.AreEqual("Tiempo de envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[5]/td[2]")).Text);
-            Assert.AreEqual("Código de cupón:", driver.FindElement(By.CssSelector("div.row.ng-scope > div.col-md-12 > label.ng-scope")).Text);
-            Assert.AreEqual("Comentarios:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div[5]/div/label")).Text);
-            try
-            {
-                Assert.IsTrue(IsElementPresent(By.XPath("(//button[@type='button'])[5]")));
-            }
-            catch (AssertFailedException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            try
-            {
-                Assert.IsTrue(IsElementPresent(By.XPath("(//button[@type='button'])[9]")));
-            }
-            catch (AssertFailedException e)
-            {
-                verificationErrors.Append(e.Message);
-            }
-            Assert.AreEqual("Finalizar compra", driver.FindElement(By.XPath("(//button[@type='button'])[9]")).Text);
-        }
+        //    driver.FindElement(By.XPath("//div[@id='header-juntoz']/nav/div/div[2]/div/div/div/div/ul/li[2]/div/div[2]/div/div/table/tfoot/tr/td/button")).Click();
+        //    driver.FindElement(By.Id("btncartitem")).Click();
+        //    Thread.Sleep(500);
+        //    driver.FindElement(By.LinkText("Iniciar Sesión")).Click();
+        //    Thread.Sleep(500);
+        //    driver.FindElement(By.Name("userEmail")).Clear();
+        //    driver.FindElement(By.Name("userEmail")).SendKeys("denisse@ieholding.com");
+        //    driver.FindElement(By.Name("password")).Clear();
+        //    driver.FindElement(By.Name("password")).SendKeys("43445093");
+        //    driver.FindElement(By.XPath("//input[@type='checkbox']")).Click();
+        //    driver.FindElement(By.Id("btnLogin")).Click();
+        //    Thread.Sleep(1000);
+        //    jse.ExecuteScript("scroll(50, 0)");
+        //    driver.FindElement(By.XPath("//div[@id='thumbnail-control-variation']/div/ul/li/a")).Click();
+        //    driver.FindElement(By.Id("btncartitem")).Click();
+        //    driver.FindElement(By.XPath("//div[@id='header-juntoz']/nav/div/div[2]/div/div/div/div/ul/li[2]/div/div[2]/div/div/table/tfoot/tr/td/button")).Click();
+        //    driver.FindElement(By.Id("btncartitem")).Click();
+        //    Thread.Sleep(500);
+        //    Assert.AreEqual("Checkout", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/div/div/h1/small")).Text);
+        //    Assert.AreEqual("Por favor ingresa la información solicitada para completar tu compra.", driver.FindElement(By.CssSelector("small.text-navy")).Text);
+        //    Assert.AreEqual("1. Información de Contacto", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/h2/small")).Text);
+        //    Assert.AreEqual("Datos del destinatario", driver.FindElement(By.CssSelector("h4")).Text);
+        //    StringAssert.Equals("Nombres", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+        //    Assert.AreEqual("Marroquin", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[2]/div[2]/div/span[2]")).Text);
+        //    Assert.AreEqual("Dirección:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[3]/div/label")).Text);
+        //    Assert.AreEqual("Calles Los Olivos 215", driver.FindElement(By.CssSelector("div.col-md-9.no-padding-left > span.ng-binding")).Text);
+        //    Assert.AreEqual("Teléfono:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[5]/div/label")).Text);
+        //    Assert.AreEqual("992781330", driver.FindElement(By.CssSelector("div.text-darkgray.ng-binding")).Text);
+        //    Assert.AreEqual("Cambiar la dirección de envío", driver.FindElement(By.CssSelector("h4.ng-scope")).Text);
+        //    Assert.AreEqual("Calles Los Olivos 215", driver.FindElement(By.CssSelector("label > span.ng-binding")).Text);
+        //    try
+        //    {
+        //        Assert.IsTrue(IsElementPresent(By.LinkText("Agregar nueva dirección de envío")));
+        //    }
+        //    catch (AssertFailedException e)
+        //    {
+        //        verificationErrors.Append(e.Message);
+        //    }
+        //    Assert.AreEqual("Agregar nueva dirección de envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[7]/div[2]/a/small")).Text);
+        //    Assert.AreEqual("Datos de Facturación", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/h4[3]")).Text);
+        //    Assert.AreEqual("Tipo:", driver.FindElement(By.CssSelector("div.col-md-4 > label.ng-scope")).Text);
+        //    StringAssert.Equals("Boleta Factura", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div/div/div[2]/div[8]/div/div/select")).Text);
+        //    Assert.AreEqual("2. Método de Pago", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/h2/small")).Text);
+        //    Assert.AreEqual("Tarjeta de crédito o débito", driver.FindElement(By.CssSelector("b.ng-binding.ng-scope")).Text);
+        //    Assert.AreEqual("Banca por internet, Agentes y Agencias", driver.FindElement(By.XPath("//label[@id='lb_pm2']/span/span[2]")).Text);
+        //    Assert.AreEqual("Pago en bancos", driver.FindElement(By.CssSelector("#lb_pm3 > b.ng-scope")).Text);
+        //    Assert.AreEqual("Pago contra entrega", driver.FindElement(By.CssSelector("#lb_pm4 > b.ng-binding.ng-scope")).Text);
+        //    driver.FindElement(By.Name("payMethodOptionRadio")).Click();
+        //    Assert.AreEqual("Nombre del titular", driver.FindElement(By.CssSelector("div.validation-section > div.row > div.col-md-12 > label")).Text);
+        //    driver.FindElement(By.CssSelector("#lb_pm2 > input[name=\"payMethodOptionRadio\"]")).Click();
+        //    Assert.AreEqual("Banca por Internet, Agentes y Agencias INTERBANK, BANBIF, BCP, BBVA y SCOTIABANK. WESTERN UNION (Pago de Servicios), KASNET y FULLCARGA.", driver.FindElement(By.CssSelector("p.text-darkgray.text-justify")).Text);
+        //    try
+        //    {
+        //        Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Cómo funciona PagoEfectivo?")).Text, "^exact:¿Cómo funciona PagoEfectivo[\\s\\S]$"));
+        //    }
+        //    catch { };
+        //        driver.FindElement(By.CssSelector("#lb_pm3 > input[name=\"payMethodOptionRadio\"]")).Click();
+        //    Assert.AreEqual("Compra rápido, fácil y seguro, y paga en efectivo o vía internet en la red de agencias de nuestros bancos afiliados con SafetyPay", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/div[3]/div/div/div/div/p")).Text);
+        //    try
+        //    {
+        //        Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Qué es SafetyPay?")).Text, "^exact:¿Qué es SafetyPay[\\s\\S]$"));
+        //    }
+        //    catch { };
+        //    driver.FindElement(By.CssSelector("#lb_pm4 > input[name=\"payMethodOptionRadio\"]")).Click();
+        //    driver.FindElement(By.Id("lb_pm4")).Click();
+        //    try { Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[2]/div[4]/div/div/div/div/div/p")).Text, "^exact:!Los envíos a centros de trabajo tienen 95% de entregas a tiempo! ¿Por qué no eliges la dirección de tu trabajo para la entrega[\\s\\S] Para este medio de pago, el monto de tu compra no debe exceder S/\\.2000 y el peso de los productos no debe exceder los 20 kg \\(peso volumétrico\\)\\. Si tu compra es de un monto superior, por favor, debes elegir entre los otros medios de pago que tenemos disponibles\\. Este método de pago está disponible sólo para ciudades principales\\.$"));
+        //        Assert.IsTrue(Regex.IsMatch(driver.FindElement(By.LinkText("¿Qué es... Pago contra entrega?")).Text, "^exact:¿Qué es\\.\\.\\. Pago contra entrega[\\s\\S]$"));
+        //    }
+        //    catch { };
+        //        Assert.AreEqual("3. Resumen de orden", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/h2/small")).Text);
+        //    Assert.AreEqual("Producto", driver.FindElement(By.CssSelector("th.text-center.ng-scope")).Text);
+        //    Assert.AreEqual("Cantidad", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/thead/tr/th[2]")).Text);
+        //    Assert.AreEqual("Subtotal", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/thead/tr/th[3]")).Text);
+        //    Assert.AreEqual("Subtotal", driver.FindElement(By.CssSelector("tfoot.chkout-table-footer > tr > td")).Text);
+        //    Assert.AreEqual("Envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[3]/td[2]")).Text);
+        //    Assert.AreEqual("Total", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[4]/td[2]")).Text);
+        //    Assert.AreEqual("Tiempo de envío", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div/div/table/tfoot/tr[5]/td[2]")).Text);
+        //    Assert.AreEqual("Código de cupón:", driver.FindElement(By.CssSelector("div.row.ng-scope > div.col-md-12 > label.ng-scope")).Text);
+        //    Assert.AreEqual("Comentarios:", driver.FindElement(By.XPath("//div[@id='body-juntoz']/div[2]/div/div/div/form/div[3]/div/div[5]/div/label")).Text);
+        //    try
+        //    {
+        //        Assert.IsTrue(IsElementPresent(By.XPath("(//button[@type='button'])[5]")));
+        //    }
+        //    catch (AssertFailedException e)
+        //    {
+        //        verificationErrors.Append(e.Message);
+        //    }
+        //    try
+        //    {
+        //        Assert.IsTrue(IsElementPresent(By.XPath("(//button[@type='button'])[9]")));
+        //    }
+        //    catch (AssertFailedException e)
+        //    {
+        //        verificationErrors.Append(e.Message);
+        //    }
+        //    Assert.AreEqual("Finalizar compra", driver.FindElement(By.XPath("(//button[@type='button'])[9]")).Text);
+        //}
 
         private bool IsElementPresent(By by)
         {
