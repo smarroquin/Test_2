@@ -144,7 +144,7 @@ namespace SuperAdmin
             }
             driver.FindElement(By.CssSelector("button.btn.btn-primary")).Click();
             Thread.Sleep(1000);
-            Assert.AreEqual("Edición", driver.FindElement(By.CssSelector("small.ng-scope")).Text);
+            StringAssert.Equals("Edición", driver.FindElement(By.CssSelector("small.ng-scope")).Text);
             Assert.AreEqual("Información Básica", driver.FindElement(By.CssSelector("uib-tab-heading.ng-scope > span.ng-scope")).Text);
             Assert.AreEqual("Información de contacto", driver.FindElement(By.XPath("//li[2]/a/uib-tab-heading/span")).Text);
             Assert.AreEqual("Politicas y Devoluciones", driver.FindElement(By.XPath("//li[3]/a/uib-tab-heading/span")).Text);
@@ -181,7 +181,7 @@ namespace SuperAdmin
             driver.FindElement(By.XPath("(//input[@type='text'])[2]")).Clear();
             driver.FindElement(By.XPath("(//input[@type='text'])[2]")).SendKeys("vans");
             driver.FindElement(By.CssSelector("button.btn.btn-success")).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(10000);
             Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.CssSelector("div.sa-body > div.col-md-12.sa-bordered > h4")).Text);
             Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("th.ng-scope")).Text);
             Assert.AreEqual("Merchant", driver.FindElement(By.XPath("//th[2]")).Text);
@@ -314,7 +314,7 @@ namespace SuperAdmin
             driver.FindElement(By.Id("btnSearch")).Click();
             Thread.Sleep(50000);
             driver.FindElement(By.XPath("//li[4]/ul/li[3]/a/span")).Click();
-            Thread.Sleep(10000);
+            Thread.Sleep(50000);
             Assert.AreEqual("Clientes", driver.FindElement(By.CssSelector("h3.box-title > span")).Text);
             Assert.AreEqual("Nombre de Cliente:", driver.FindElement(By.CssSelector("label")).Text);
             Assert.AreEqual("Buscar", driver.FindElement(By.CssSelector("button.btn.btn-primary")).Text);
@@ -325,9 +325,9 @@ namespace SuperAdmin
             Assert.AreEqual("Teléfono", driver.FindElement(By.XPath("//th[5]")).Text);
             StringAssert.Equals("Celular", driver.FindElement(By.XPath("//th[6]")).Text);
             Assert.AreEqual("Crear Cliente", driver.FindElement(By.XPath("//button")).Text);
-
-            driver.FindElement(By.XPath("//button[2]")).Click();
-            Thread.Sleep(10000);
+         
+            driver.FindElement(By.CssSelector("button.btn.btn-default")).Click();
+            Thread.Sleep(50000);
             Assert.AreEqual("Clientes", driver.FindElement(By.CssSelector("h3.box-title > span")).Text);
             Assert.AreEqual("Información básica", driver.FindElement(By.CssSelector("uib-tab-heading.ng-scope > span.ng-scope")).Text);
             Assert.AreEqual("Nombres", driver.FindElement(By.CssSelector("label")).Text);
@@ -340,15 +340,17 @@ namespace SuperAdmin
             Assert.AreEqual("Country", driver.FindElement(By.XPath("//div[7]/div/div/label")).Text);
             Assert.AreEqual("Guardar", driver.FindElement(By.XPath("//button[@type='submit']")).Text);
             Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("//button[@type='button']")).Text);
-
-            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            Thread.Sleep(1000);
+            //driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            Thread.Sleep(50000);
             driver.FindElement(By.XPath("//li[4]/ul/li[4]/a/span")).Click();
+            Thread.Sleep(10000);
             Assert.AreEqual("Coupons", driver.FindElement(By.CssSelector("span.ng-binding")).Text);
             Assert.AreEqual("Filtros de Búsqueda", driver.FindElement(By.CssSelector("h4")).Text);
             Assert.AreEqual("Cupón", driver.FindElement(By.CssSelector("label.control-label")).Text);
             Assert.AreEqual("Buscar", driver.FindElement(By.CssSelector("button.btn.btn-success")).Text);
             Assert.AreEqual("Limpiar Filtros", driver.FindElement(By.CssSelector("button.btn.btn-default")).Text);
-            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.CssSelector("div.sa-body. > div.col-md-12.sa-bordered > h4")).Text);
+            StringAssert.Contains("Resultados de Búsqueda", driver.FindElement(By.XPath("//div[2]/div/h4")).Text);
             Assert.AreEqual("Codigo de Cupón", driver.FindElement(By.CssSelector("th")).Text);
             Assert.AreEqual("Descuento", driver.FindElement(By.XPath("//th[2]")).Text);
             Assert.AreEqual("Inicio", driver.FindElement(By.XPath("//th[3]")).Text);
@@ -367,7 +369,7 @@ namespace SuperAdmin
             Assert.AreEqual("Opciones", driver.FindElement(By.XPath("//th[9]")).Text);
             Assert.AreEqual("Crear Cupón", driver.FindElement(By.CssSelector("button.btn.btn-primary")).Text);
             driver.FindElement(By.CssSelector("button.btn.btn-primary")).Click();
-            Assert.AreEqual("Información básica", driver.FindElement(By.CssSelector("uib-tab-heading.ng-scope > span.ng-scope")).Text);
+            StringAssert.Contains("Información básica", driver.FindElement(By.CssSelector("uib-tab-heading.ng-scope > span.ng-scope")).Text);
             Assert.AreEqual("Código de Cupón", driver.FindElement(By.CssSelector("label")).Text);
             Assert.AreEqual("Tipo de Descuento", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
             Assert.AreEqual("Descuento", driver.FindElement(By.XPath("//div[3]/div/div/label")).Text);
@@ -387,11 +389,11 @@ namespace SuperAdmin
             Assert.AreEqual("Guardar", driver.FindElement(By.XPath("//button[@type='submit']")).Text);
             Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("(//button[@type='button'])[3]")).Text);
             driver.FindElement(By.XPath("(//button[@type='button'])[3]")).Click();
-
             driver.FindElement(By.XPath("//li[5]/a/span")).Click();
-            Assert.AreEqual("Reembolsos", driver.FindElement(By.CssSelector("ul.treeview-menu.menu-open > li > a > span")).Text);
-            driver.FindElement(By.CssSelector("ul.treeview-menu.menu-open > li > a > span")).Click();
-            Assert.AreEqual("Reembolsos", driver.FindElement(By.CssSelector("h3.box-title > span")).Text);
+            StringAssert.Contains("Reembolsos", driver.FindElement(By.XPath("//li[5]/ul/li/a/span")).Text);
+            driver.FindElement(By.XPath("//li[5]/ul/li/a/span")).Click();
+            Thread.Sleep(1000);
+            Assert.AreEqual("Reembolsos", driver.FindElement(By.XPath("//h3/span")).Text);
             Assert.AreEqual("Filtros de Búsqueda", driver.FindElement(By.CssSelector("h4")).Text);
             Assert.AreEqual("Número Orden", driver.FindElement(By.CssSelector("label")).Text);
             Assert.AreEqual("Cupón", driver.FindElement(By.XPath("//div[2]/label")).Text);
@@ -407,8 +409,8 @@ namespace SuperAdmin
             Assert.AreEqual("Estado Orden", driver.FindElement(By.XPath("//div[5]/label")).Text);
             Assert.AreEqual("Opción Fechas", driver.FindElement(By.XPath("//div[6]/label")).Text);
             Assert.AreEqual("Filtrar", driver.FindElement(By.CssSelector("button.btn.btn-success")).Text);
-            Assert.AreEqual("Limpiar Filtros", driver.FindElement(By.CssSelector("button.btn.btn-default")).Text);
-            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.CssSelector("div.sa-body. > div.col-md-12.sa-bordered > h4")).Text);
+            Assert.AreEqual("Limpiar Filtros", driver.FindElement(By.XPath("(//button[@type='submit'])[2]")).Text);
+            StringAssert.Equals("Resultados de Búsqueda", driver.FindElement(By.XPath("//div[2]/div/h4")).Text);
             Assert.AreEqual("# de Orden", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[2]")).Text);
             Assert.AreEqual("Fecha", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[3]")).Text);
             Assert.AreEqual("Operador", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[4]")).Text);
@@ -419,6 +421,7 @@ namespace SuperAdmin
             Assert.AreEqual("Total", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[9]")).Text);
             Assert.AreEqual("Opciones", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[10]")).Text);
             driver.FindElement(By.XPath("//li[5]/ul/li[2]/a/span")).Click();
+            Thread.Sleep(50000);
             Assert.AreEqual("Pagos", driver.FindElement(By.CssSelector("h3.box-title > span")).Text);
             Assert.AreEqual("Filtros de Búsqueda", driver.FindElement(By.CssSelector("h4")).Text);
             Assert.AreEqual("Número de Factura", driver.FindElement(By.CssSelector("label")).Text);
@@ -427,7 +430,7 @@ namespace SuperAdmin
             Assert.AreEqual("SKU", driver.FindElement(By.XPath("//div[4]/label")).Text);
             Assert.AreEqual("Filtrar", driver.FindElement(By.CssSelector("button.btn.btn-success")).Text);
             Assert.AreEqual("Limpiar Filtros", driver.FindElement(By.CssSelector("button.btn.btn-default")).Text);
-            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.CssSelector("div.sa-body. > div.col-md-12.sa-bordered > h4")).Text);
+            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.XPath("//div[2]/div/h4")).Text);
             Assert.AreEqual("# de Factura", driver.FindElement(By.CssSelector("th")).Text);
             Assert.AreEqual("# de Operación", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[2]")).Text);
             Assert.AreEqual("# de Orden", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[3]")).Text);
@@ -438,6 +441,67 @@ namespace SuperAdmin
             Assert.AreEqual("Total Neto", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[8]")).Text);
             Assert.AreEqual("Fecha de Pago", driver.FindElement(By.XPath("//table[@id='accordion']/thead/tr/th[9]")).Text);
             Assert.AreEqual("Cargar Pagos", driver.FindElement(By.LinkText("Cargar Pagos")).Text);
+
+            Assert.AreEqual("Logistica", driver.FindElement(By.XPath("//li[6]/a/span")).Text);
+            driver.FindElement(By.XPath("//li[6]/a/span")).Click();
+            Assert.AreEqual("Operadores", driver.FindElement(By.XPath("//li[6]/ul/li/a/span")).Text);
+            Assert.AreEqual("Zonas", driver.FindElement(By.LinkText("Zonas")).Text);
+            driver.FindElement(By.XPath("//li[6]/ul/li/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Suppliers", driver.FindElement(By.XPath("//h3/span")).Text);
+            Assert.AreEqual("Filtros de Búsqueda", driver.FindElement(By.CssSelector("h4")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.XPath("//label")).Text);
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.XPath("//input[@value='']")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            Assert.AreEqual("Buscar", driver.FindElement(By.CssSelector("button.btn.btn-success")).Text);
+            Assert.AreEqual("Limpiar Filtros", driver.FindElement(By.CssSelector("button.btn.btn-default")).Text);
+            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.XPath("//div[2]/div/h4")).Text);
+            Assert.AreEqual("Supplier ID", driver.FindElement(By.CssSelector("th")).Text);
+            Assert.AreEqual("Name", driver.FindElement(By.XPath("//th[2]")).Text);
+            Assert.AreEqual("Tax Identifier", driver.FindElement(By.XPath("//th[3]")).Text);
+            Assert.AreEqual("Opciones", driver.FindElement(By.XPath("//th[4]")).Text);
+            Assert.AreEqual("Crear Supplier", driver.FindElement(By.CssSelector("button.btn.btn-primary")).Text);
+            driver.FindElement(By.CssSelector("button.btn.btn-primary")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Información básica", driver.FindElement(By.XPath("//uib-tab-heading/span")).Text);
+            Assert.AreEqual("Name", driver.FindElement(By.CssSelector("label")).Text);
+            Assert.AreEqual("Ingrese nombre", driver.FindElement(By.XPath("//div/div/div/p")).Text);
+            Assert.AreEqual("Tax Identifier", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
+            Assert.AreEqual("Ingrese TAX", driver.FindElement(By.XPath("//div[2]/div/div/p")).Text);
+            Assert.AreEqual("Servicio Express", driver.FindElement(By.XPath("//div[3]/div/div/label")).Text);
+            Assert.AreEqual("Country", driver.FindElement(By.XPath("//div[4]/div/div/label")).Text);
+            Assert.AreEqual("Action", driver.FindElement(By.CssSelector("button.btn.btn-primary")).Text);
+            Assert.AreEqual("Guardar", driver.FindElement(By.XPath("//button[@type='submit']")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("//button[@type='button']")).Text);
+            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            Thread.Sleep(10000);
+            driver.FindElement(By.XPath("//li[6]/ul/li[2]/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Zonas", driver.FindElement(By.CssSelector("h3.box-title > span")).Text);
+            Assert.AreEqual("Resultados de Búsqueda", driver.FindElement(By.CssSelector("h4")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("th")).Text);
+            Assert.AreEqual("Ubigeos", driver.FindElement(By.XPath("//th[2]")).Text);
+            Assert.AreEqual("Opciones", driver.FindElement(By.XPath("//th[3]")).Text);
+            Assert.AreEqual("Crear Zona", driver.FindElement(By.CssSelector("button.btn.btn-primary")).Text);
+            driver.FindElement(By.CssSelector("button.btn.btn-primary")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Información Básica", driver.FindElement(By.CssSelector("uib-tab-heading.ng-scope > span")).Text);
+            Assert.AreEqual("Nombre de Zona", driver.FindElement(By.CssSelector("label")).Text);
+            Assert.AreEqual("Ubigeo", driver.FindElement(By.XPath("//div[2]/div/div/div/label")).Text);
+            Assert.AreEqual("Lista de Ubigeos", driver.FindElement(By.CssSelector("h5 > b")).Text);
+            Assert.AreEqual("Código de Ubigeo", driver.FindElement(By.CssSelector("td > b")).Text);
+            Assert.AreEqual("Nombre de Ubigeo", driver.FindElement(By.XPath("//td[2]/b")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("//button[2]")).Text);
+            driver.FindElement(By.XPath("//button[2]")).Click();
+            Thread.Sleep(10000);
+
+
 
 
         }
