@@ -43,6 +43,7 @@ namespace MobileD
         public void TheMobileTest()
         {
             driver.Navigate().GoToUrl(baseURL + "/");
+            driver.Manage().Window.Maximize();
             Assert.AreEqual("", driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Text);
             try
             {
@@ -87,8 +88,12 @@ namespace MobileD
             StringAssert.Equals("VER TODAS", driver.FindElement(By.XPath("//div[@id='content']/div/div[3]/div[2]/div/div[2]/div[2]/div/div[12]/span/div/div/div")).Text);
             StringAssert.Equals("TECNOLOGÍA Y CÓMPUTO", driver.FindElement(By.XPath("//div[@id='content']/div/div[3]/div[2]/div/div[2]/div[3]/span/div/div")).Text);
             Assert.AreEqual("Servicio al cliente", driver.FindElement(By.XPath("//div[@id='content']/div/div[3]/div[2]/div/div[3]/div")).Text);
-            Assert.AreEqual("LIBRO DE RECLAMACIONES", driver.FindElement(By.XPath("//div[@id='content']/div/div[3]/div[2]/div/div[3]/div[2]/span/div/div/div")).Text);
-            driver.FindElement(By.XPath("//div[@id='content']/div/div[3]/div[2]/div/div[3]/div[2]/span/div/div/div")).Click();
+            Assert.AreEqual("CAMBIOS Y DEVOLUCIONES", driver.FindElement(By.XPath("//div[3]/div[2]/span/div/div/div")).Text);
+            Assert.AreEqual("TÉRMINOS Y CONDICIONES", driver.FindElement(By.XPath("//div[3]/div[3]/span/div/div")).Text);
+            Assert.AreEqual("PRIVACIDAD Y CONFIDENCIALIDAD", driver.FindElement(By.XPath("//div[3]/div[4]/span/div/div/div")).Text);
+            Assert.AreEqual("TÉRMINOS LEGALES DE CAMPAÑAS", driver.FindElement(By.XPath("//div[3]/div[5]/span/div/div/div")).Text);
+            Assert.AreEqual("LIBRO DE RECLAMACIONES", driver.FindElement(By.XPath("//div[3]/div[6]/span/div/div/div")).Text);
+            driver.FindElement(By.XPath("//div[3]/div[6]/span/div/div/div")).Click();
             StringAssert.Equals("Libro de reclamaciones", driver.FindElement(By.CssSelector("span")).Text);
             try { StringAssert.Equals("Juntoz Perú SAC", driver.FindElement(By.CssSelector("p > strong")).Text);
 
@@ -266,11 +271,12 @@ namespace MobileD
         public void TMobileShop()
         {
             driver.Navigate().GoToUrl(baseURL + "/");
+            Thread.Sleep(2000);
             StringAssert.Equals("Tiendas Destacadas", driver.FindElement(By.CssSelector("h2")).Text);
             StringAssert.Equals("Todas las tiendas", driver.FindElement(By.CssSelector("article.stores > header > div > h2")).Text);
-            driver.Navigate().GoToUrl(baseURL + "/producto/khs-bicicleta-tc-150-l-1035-077723");
+           // driver.Navigate().GoToUrl(baseURL + "/producto/khs-bicicleta-tc-150-l-1035-077723");
             
-            Assert.AreEqual("Agotado", driver.FindElement(By.XPath("//div[@id='content']/div/div[2]/div/div[2]/div[5]/div/div/div[2]")).Text);
+            //Assert.AreEqual("Agotado", driver.FindElement(By.XPath("//div[@id='content']/div/div[2]/div/div[2]/div[5]/div/div/div[2]")).Text);
             driver.Navigate().GoToUrl(baseURL + "/producto/tsg-casco-skatebmx-79750400-35-151");
             StringAssert.Equals("CÓMPRALO AHORA", driver.FindElement(By.XPath("(//button[@type='button'])[8]")).Text);
             StringAssert.Equals("AGRÉGALO AL CARRITO", driver.FindElement(By.XPath("(//button[@type='button'])[9]")).Text);
@@ -278,8 +284,8 @@ namespace MobileD
             Assert.AreEqual("Mi Carrito", driver.FindElement(By.XPath("//div[@id='content']/div/div[4]/div[2]/div/div/div[2]/span")).Text);
             Assert.AreEqual("Tienes 1 producto en tu carrito", driver.FindElement(By.XPath("//div[@id='content']/div/div[4]/div[2]/div/div[2]")).Text);
             Assert.AreEqual("Subtotal:", driver.FindElement(By.XPath("//div[@id='content']/div/div[4]/div[2]/div[3]/div/div")).Text);
-            Assert.AreEqual("COMPRAR TODO", driver.FindElement(By.XPath("(//button[@type='button'])[28]")).Text);
-            driver.FindElement(By.XPath("(//button[@type='button'])[26]")).Click();
+            Assert.AreEqual("COMPRAR TODO", driver.FindElement(By.XPath("(//button[@type='button'])[24]")).Text);
+            driver.FindElement(By.XPath("(//button[@type='button'])[24]")).Click();
         }
 
         private bool IsElementPresent(By by)
