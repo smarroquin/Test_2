@@ -444,6 +444,7 @@ namespace SuperAdmin
 
             Assert.AreEqual("Logistica", driver.FindElement(By.XPath("//li[6]/a/span")).Text);
             driver.FindElement(By.XPath("//li[6]/a/span")).Click();
+            Thread.Sleep(1000);
             Assert.AreEqual("Operadores", driver.FindElement(By.XPath("//li[6]/ul/li/a/span")).Text);
             Assert.AreEqual("Zonas", driver.FindElement(By.LinkText("Zonas")).Text);
             driver.FindElement(By.XPath("//li[6]/ul/li/a/span")).Click();
@@ -501,7 +502,145 @@ namespace SuperAdmin
             driver.FindElement(By.XPath("//button[2]")).Click();
             Thread.Sleep(10000);
 
-
+            driver.FindElement(By.XPath("//li[7]/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Catalogo", driver.FindElement(By.CssSelector("li.treeview.active > a > span")).Text);
+            Assert.AreEqual("Productos", driver.FindElement(By.CssSelector("ul.treeview-menu.menu-open > li > a > span.ng-scope")).Text);
+            Assert.AreEqual("Categorías", driver.FindElement(By.XPath("//li[7]/ul/li[2]/a/span")).Text);
+            Assert.AreEqual("Marcas", driver.FindElement(By.XPath("//li[7]/ul/li[3]/a/span")).Text);
+            Assert.AreEqual("Etiquetas", driver.FindElement(By.XPath("//li[7]/ul/li[4]/a/span")).Text);
+            driver.FindElement(By.CssSelector("ul.treeview-menu.menu-open > li > a > span.ng-scope")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Productos", driver.FindElement(By.CssSelector("h3.box-title > span.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.XPath("//div[2]/div/label")).Text);
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.XPath("//select")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.XPath("//div[2]/div/select")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.XPath("//input[@type='text']")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.XPath("(//input[@type='text'])[2]")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            Assert.AreEqual("Buscar", driver.FindElement(By.XPath("//button[@type='submit']")).Text);
+            Assert.AreEqual("Crear Producto", driver.FindElement(By.XPath("//button")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("th.ng-scope")).Text);
+            Assert.AreEqual("Descripción", driver.FindElement(By.XPath("//th[2]")).Text);
+            Assert.AreEqual("Marca", driver.FindElement(By.XPath("//th[3]")).Text);
+            Assert.AreEqual("Acciones", driver.FindElement(By.XPath("//th[4]")).Text);
+            driver.FindElement(By.XPath("//button")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Productos", driver.FindElement(By.CssSelector("h3 > span.ng-scope")).Text);
+            Assert.AreEqual("Información básica", driver.FindElement(By.CssSelector("h3.panel-title.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+            Assert.AreEqual("Marca", driver.FindElement(By.XPath("//div[2]/label")).Text);
+            Assert.AreEqual("Categoría", driver.FindElement(By.XPath("//div[3]/label")).Text);
+            Assert.AreEqual("Descripción", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
+            Assert.AreEqual("Código de barras", driver.FindElement(By.XPath("//div[3]/div/div/label")).Text);
+            Assert.AreEqual("Publicado", driver.FindElement(By.CssSelector("label > span.ng-scope")).Text);
+            Assert.AreEqual("Motores de búsqueda", driver.FindElement(By.XPath("//div[2]/div/div/h3")).Text);
+            Assert.AreEqual("Meta Title", driver.FindElement(By.XPath("//div[2]/div/div[2]/div/div/div/label")).Text);
+            Assert.AreEqual("Meta Keywords", driver.FindElement(By.XPath("//div[2]/div/div[2]/div[2]/div/div/label")).Text);
+            Assert.AreEqual("Meta Description", driver.FindElement(By.XPath("//div[2]/div/div[2]/div[3]/div/div/label")).Text);
+            Assert.AreEqual("Seo Url", driver.FindElement(By.XPath("//div[4]/div/div/label")).Text);
+            Assert.AreEqual("Imagen de producto", driver.FindElement(By.XPath("//div[2]/div/div/div/h3")).Text);
+            Assert.AreEqual("Cargar", driver.FindElement(By.XPath("//button")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("//button[@type='button']")).Text);
+            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            driver.FindElement(By.XPath("//li[7]/ul/li[2]/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Categorias", driver.FindElement(By.CssSelector("h3.box-title > span.ng-scope")).Text);
+            Assert.AreEqual("Ver como tabla", driver.FindElement(By.CssSelector("button.btn.btn-default")).Text);
+            Assert.AreEqual("Crear Categoría", driver.FindElement(By.XPath("//button[2]")).Text);
+            driver.FindElement(By.XPath("//button[2]")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Información básica", driver.FindElement(By.CssSelector("div.panel-heading")).Text);
+            Assert.AreEqual("Descripción", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
+            Assert.AreEqual("Categoría padre", driver.FindElement(By.XPath("//div[3]/div/div/label")).Text);
+            Assert.AreEqual("Orden", driver.FindElement(By.XPath("//div[4]/div/div/label")).Text);
+            Assert.AreEqual("Publicado", driver.FindElement(By.CssSelector("div.checkbox-inline.control-label")).Text);
+            Assert.AreEqual("Search engines", driver.FindElement(By.XPath("//div[2]/div/div/h3")).Text);
+            Assert.AreEqual("Meta Title", driver.FindElement(By.XPath("//div[2]/div/div[2]/div/div/div/label")).Text);
+            Assert.AreEqual("Meta Keywords", driver.FindElement(By.XPath("//div[2]/div/div[2]/div[2]/div/div/label")).Text);
+            Assert.AreEqual("Seo Url", driver.FindElement(By.XPath("//div[2]/div/div[2]/div[4]/div/div/label")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Text);
+            driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
+            Thread.Sleep(10000);
+            driver.FindElement(By.XPath("//li[7]/ul/li[3]/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Marcas", driver.FindElement(By.CssSelector("h3.box-title > span.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("th.ng-scope")).Text);
+            Assert.AreEqual("Descripción", driver.FindElement(By.XPath("//th[2]")).Text);
+            Assert.AreEqual("Publicado", driver.FindElement(By.XPath("//th[3]")).Text);
+            Assert.AreEqual("Orden", driver.FindElement(By.XPath("//th[4]")).Text);
+            Assert.AreEqual("Acciones", driver.FindElement(By.XPath("//th[5]")).Text);
+            Assert.AreEqual("Crear Marcas", driver.FindElement(By.XPath("//button")).Text);
+            driver.FindElement(By.XPath("//button")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Marcas", driver.FindElement(By.CssSelector("h3.box-title > span.ng-scope")).Text);
+            Assert.AreEqual("Información básica", driver.FindElement(By.XPath("//uib-tab-heading/span")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+            Assert.AreEqual("Descripción", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
+            Assert.AreEqual("Orden", driver.FindElement(By.XPath("//div[3]/div/div/label")).Text);
+            Assert.AreEqual("Publicado", driver.FindElement(By.CssSelector("label > span.ng-scope")).Text);
+            driver.FindElement(By.XPath("//li[2]/a/uib-tab-heading/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Meta Title", driver.FindElement(By.XPath("//div[2]/div/div/div/label")).Text);
+            Assert.AreEqual("Meta Keywords", driver.FindElement(By.XPath("//div[2]/div[2]/div/div/label")).Text);
+            Assert.AreEqual("Meta Description", driver.FindElement(By.XPath("//div[2]/div[3]/div/div/label")).Text);
+            Assert.AreEqual("Seo Url", driver.FindElement(By.XPath("//div[4]/div/div/label")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("//button[@type='button']")).Text);
+            driver.FindElement(By.XPath("//button[@type='button']")).Click();
+            Thread.Sleep(10000);
+            driver.FindElement(By.XPath("//li[7]/ul/li[4]/a/span")).Click();
+            Thread.Sleep(10000);
+            Assert.AreEqual("Etiquetas", driver.FindElement(By.CssSelector("h3.box-title > span.ng-scope")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("label.ng-scope")).Text);
+            Assert.AreEqual("Crear etiqueta", driver.FindElement(By.XPath("//button")).Text);
+            Assert.AreEqual("Nombre", driver.FindElement(By.CssSelector("th.ng-scope")).Text);
+            Assert.AreEqual("Orden", driver.FindElement(By.XPath("//th[2]")).Text);
+            Assert.AreEqual("Publicado", driver.FindElement(By.XPath("//th[3]")).Text);
+            Assert.AreEqual("Acciones", driver.FindElement(By.XPath("//th[4]")).Text);
+            driver.FindElement(By.XPath("//button")).Click();
+            try
+            {
+                Assert.IsTrue(IsElementPresent(By.CssSelector("div.modal-header")));
+            }
+            catch (AssertFailedException e)
+            {
+                verificationErrors.Append(e.Message);
+            }
+            Assert.AreEqual("Crear etiqueta", driver.FindElement(By.XPath("//h4")).Text);
+            Assert.AreEqual("Nombre:", driver.FindElement(By.XPath("//div/div/div/label")).Text);
+            Assert.AreEqual("Orden:", driver.FindElement(By.XPath("//div[2]/div/div/label")).Text);
+            Assert.AreEqual("Cancelar", driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Text);
+            driver.FindElement(By.XPath("(//button[@type='button'])[2]")).Click();
+            Thread.Sleep(10000);
 
 
         }
